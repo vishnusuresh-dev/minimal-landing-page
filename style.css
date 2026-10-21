@@ -39,89 +39,162 @@ body{
   font-size: medium;
 }
 
-.about-me-conatiner{
-  padding:2rem;
+/* ABOUT ME SECTION */
+
+.about-me-conatiner {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.about-me-heading{
-  font-family: Manrope;
-}
-#about-me-ul{
-  color: black;
-  height: 2px;
-  border-radius: 0;
-  background-color: black;
-  width: 4rem;
-  margin-top: 0.5rem;
+.about-me-heading {
+  font-family: Manrope, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #555;
 }
 
-.about-me-contents{
+/* Small decorative line */
+#about-me-ul {
+  height: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: #171717;
+  width: 50px;
+  margin-top: .5rem;
+}
+
+/* Main content layout */
+.about-me-contents {
   display: flex;
-  padding: 2rem;
-  gap: 80px;
-  font-family: Manrope;
-  font-size: 30px;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  justify-content: center;
   align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+  margin: 2rem 0 0;
+
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+
+  font-family: Manrope, sans-serif;
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
-.about-para-conatiner{
-  width: 50vw;
+/* Text content */
+.about-para-conatiner {
+  max-width: 650px;
+  width: auto;
 }
 
-.avatar{
-  height: 12rem;
-  width: 12rem;
-  margin-top: 1rem;
-  
+.about-para-conatiner p {
+  color: #424141;
+  font-size: larger;
+  margin-bottom: 1.2rem;
+  font-family: DotGothic16;
 }
 
-.avatar-container{
-  background-color: white;
+/* Avatar */
+.avatar-container {
+  flex-shrink: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 50%;
-  height: 13rem;
-  width: 13rem;
+
+  height: 220px;
+  width: 220px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   overflow: hidden;
-
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.marquee-container {
-  --s: 40px; /* size of the logo */
-  --d: 20s; /* animation duration*/
-  --n: 4; /* number of visible logos */
-  
-  display: flex;
+.avatar-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.avatar {
+  height: 90%;
+  width: 90%;
+  object-fit: contain;
+  margin-top: 1rem;
+}
+
+
+.skills {
+  padding: 50px 0;
+  text-align: center;
   overflow: hidden;
+  font-family: Manrope;
+  text-align: center;
+  margin: 0 auto;
 }
 
-img {
-  width: var(--s);
-  offset: shape(from calc(var(--s)/-2) 50%,hline by calc(sibling-count()*max(100%/var(--n),var(--s) + 10px)));
-  animation: x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
-}
-@keyframes x { 
-  to {offset-distance: 100%}
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: DotGothic16;
 }
 
-.marquee-parent-container {
-  padding-block: 5px;
-  width: 80vw;
+.skills p {
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  width: 720px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-:nth-child(2 of .container) img {
-  animation-direction: reverse;
+  margin: 0 auto;
 }
 
-.marquee-container{
+.marquee-track {
+  display: flex;
+  width: 100vw;
+  gap: 40px;
+  animation: scroll 15s linear infinite;
+}
+
+.skill {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 130px;
+  gap: 12px;
+  padding: 15px 22px;
+}
+
+.skill img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.skill:hover {
+  border-color: #8b5cf6;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
