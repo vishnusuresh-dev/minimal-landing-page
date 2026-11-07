@@ -6,7 +6,10 @@ body{
   background-color: #E5E5E5;
 }
 
-
+.heading-link{
+  text-decoration: none;
+  color: #171717;
+}
 .landing-center{
   padding:2rem;
 }
@@ -29,6 +32,10 @@ body{
 .links{
   text-decoration: none;
   color: grey;
+}
+
+.links:hover{
+  color: #2d2c2c;
 }
 
 .main-container{
@@ -93,6 +100,7 @@ body{
   margin-bottom: 1.2rem;
   font-family: DotGothic16;
   text-transform: lowercase;
+
 }
 
 /* Avatar */
@@ -184,10 +192,6 @@ body{
   object-fit: contain;
 }
 
-.skill:hover {
-  border-color: #8b5cf6;
-}
-
 .marquee:hover .marquee-track {
   animation-play-state: paused;
 }
@@ -205,6 +209,7 @@ body{
 .project-top-container{
   text-align: right;
   display: block;
+  margin-right: 8rem;
 }
 
 .project-heading{
@@ -289,4 +294,60 @@ body{
 
 .link:hover{
   color:  rgb(45, 51, 63);
+}
+
+.contact-section{
+  margin: 2rem auto;
+  max-width: 80vw;
+  padding: 2rem;
+}
+
+.inner-container-contact h2{
+  font-weight:500;
+  color: #555;
+  font-family: IBM Plex Mono;
+  font-size: 1rem;
+}
+
+.inner-container-contact h1{
+  font-family: Inter;
+  font-weight: 300;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  color: #4f4d4d;
+  font-size: 2.3rem;
+}
+
+.contact-line-break{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.button-conatiner{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: -10rem;
+  margin-right: 5rem;
+}
+
+
+.get-in-touch{
+  background-color: #b1aeae;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  font-family: Manrope;
+  color: #4e4b4b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.get-in-touch:hover{
+  background-color:#455CE9;
+  color: white;
+  transform: scale(1.05,1.05);
 }
